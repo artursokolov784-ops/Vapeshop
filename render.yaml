@@ -10,13 +10,6 @@ services:
         sync: false
       - key: ADMIN_ID
         sync: false
-      - key: DB_PATH
-        value: /var/data/vapeshop.db
-    disk:
-      name: data
-      mountPath: /var/data
-      sizeGB: 1
-
   - type: worker
     name: vapeshop-bot
     env: python
@@ -28,9 +21,5 @@ services:
         sync: false
       - key: ADMIN_ID
         sync: false
-      - key: DB_PATH
-        value: /var/data/vapeshop.db
-    disk:
-      name: data
-      mountPath: /var/data
-      sizeGB: 1
+      
+    
