@@ -296,12 +296,6 @@ async def api_upload(file: UploadFile = File(...)):
     return {"url": f"/uploads/{filename}"}
 
 # === Статика ===
-import asyncio
-from bot import dp, bot
-
-@app.on_event("startup")
-async def start_bot():
-    asyncio.create_task(dp.start_polling(bot))
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
